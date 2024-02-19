@@ -11,10 +11,4 @@ class Solution:
                 c+=1
             else:
                 c-=1
-        c1=0
-        for i in range(n):
-            if nums[i]==e:
-                c1+=1
-        if c1 > (n / 2):
-            return e
-        return -1
+        return e
