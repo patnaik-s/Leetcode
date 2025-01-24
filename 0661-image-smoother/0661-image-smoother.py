@@ -9,7 +9,8 @@ class Solution:
                     for j in range(c-1,c+2):
                         if i < 0 or i == row or j < 0 or j == col:
                             continue
-                        tot+=img[i][j]
+                        tot+=img[i][j] % 256 # ___ 1111 1111 given constrain 255 so anything before is always greater than 255
                         count+=1
-                res[r][c]= tot // count
+                    
+                res[r][c]= res[r][c] ^ (tot // count) << 8 #XOR OR operation to shifting 8 bit coz want to store result 
         return res
